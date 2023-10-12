@@ -1,0 +1,69 @@
+{
+  "builder_name": "wikihow",
+  "citation": "@misc{koupaee2018wikihow,\n    title={WikiHow: A Large Scale Text Summarization Dataset},\n    author={Mahnaz Koupaee and William Yang Wang},\n    year={2018},\n    eprint={1810.09305},\n    archivePrefix={arXiv},\n    primaryClass={cs.CL}\n}\n",
+  "config_name": "all",
+  "dataset_size": 549761013,
+  "description": "WikiHow is a new large-scale dataset using the online WikiHow\n(http://www.wikihow.com/) knowledge base.\n\nThere are two features:\n  - text: wikihow answers texts.\n  - headline: bold lines as summary.\n\nThere are two separate versions:\n  - all: consisting of the concatenation of all paragraphs as the articles and\n         the bold lines as the reference summaries.\n  - sep: consisting of each paragraph and its summary.\n\nDownload \"wikihowAll.csv\" and \"wikihowSep.csv\" from\nhttps://github.com/mahnazkoupaee/WikiHow-Dataset and place them in manual folder\nhttps://www.tensorflow.org/datasets/api_docs/python/tfds/download/DownloadConfig.\nTrain/validation/test splits are provided by the authors.\nPreprocessing is applied to remove short articles\n(abstract length < 0.75 article length) and clean up extra commas.\n",
+  "download_checksums": {
+    "https://raw.githubusercontent.com/mahnazkoupaee/WikiHow-Dataset/master/all_train.txt": {
+      "num_bytes": 5096074,
+      "checksum": null
+    },
+    "https://raw.githubusercontent.com/mahnazkoupaee/WikiHow-Dataset/master/all_val.txt": {
+      "num_bytes": 182165,
+      "checksum": null
+    },
+    "https://raw.githubusercontent.com/mahnazkoupaee/WikiHow-Dataset/master/all_test.txt": {
+      "num_bytes": 182146,
+      "checksum": null
+    }
+  },
+  "download_size": 5460385,
+  "features": {
+    "text": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "headline": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "title": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "https://github.com/mahnazkoupaee/WikiHow-Dataset",
+  "license": "",
+  "size_in_bytes": 555221398,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 513238117,
+      "num_examples": 157252,
+      "shard_lengths": [
+        154000,
+        3252
+      ],
+      "dataset_name": "wikihow"
+    },
+    "validation": {
+      "name": "validation",
+      "num_bytes": 18246885,
+      "num_examples": 5599,
+      "dataset_name": "wikihow"
+    },
+    "test": {
+      "name": "test",
+      "num_bytes": 18276011,
+      "num_examples": 5577,
+      "dataset_name": "wikihow"
+    }
+  },
+  "version": {
+    "version_str": "1.2.0",
+    "major": 1,
+    "minor": 2,
+    "patch": 0
+  }
+}
